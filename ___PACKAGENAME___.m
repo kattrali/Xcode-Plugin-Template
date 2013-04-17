@@ -29,9 +29,10 @@
         NSMenuItem *viewMenuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
         if (viewMenuItem) {
             [[viewMenuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *sample = [[[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""] autorelease];
+            NSMenuItem *sample = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
             [sample setTarget:self];
             [[viewMenuItem submenu] addItem:sample];
+            [sample release];
         }
     }
     return self;
