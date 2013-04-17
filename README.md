@@ -5,9 +5,9 @@ Basic template for creating a plugin for Xcode4.
 
 ## Installation
 
-- Clone or copy this project to `/Users/[username]/Library/Developer/Xcode/Templates/Xcode4\ Plugin.xctemplate`. (Create `/Users/[username]/Library/Developer/Xcode/Templates` directory if it does not already exist.)
+- Clone or copy this project to `~/Library/Developer/Xcode/Templates/Project Templates/Application Plug-in/Xcode4 Plugin.xctemplate`. (Create the `Templates/Project Templates/Application Plug-in` subdirectories if they do not already exist.)
 - Restart Xcode
-- When creating a new Xcode plugin, create a new project and select **Xcode Plugin** from `OS X > Templates`.
+- When creating a new Xcode plugin, create a new project and select **Xcode4 Plugin** from `OS X > Application Plug-in`.
 
 
 ## Usage
