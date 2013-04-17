@@ -17,7 +17,7 @@ The default plugin file links against `AppKit` and `Foundation`, and, when built
 
 ## Notes
 
-- Set `XCPluginHasUI` in `Info.plist` to `YES` if your plugin has a graphical component.
+- Set `XCPluginHasUI` in `Info.plist` to `YES` to disable your plugin
 
 ### Plugin Debugging
 
