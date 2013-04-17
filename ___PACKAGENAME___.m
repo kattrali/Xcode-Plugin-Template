@@ -38,7 +38,7 @@
 }
 
 // Sample Action, for menu item:
-- (void) doMenuAction
+- (void)doMenuAction
 {
     NSAlert *alert = [NSAlert alertWithMessageText:@"Hello, World" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
     [alert runModal];
