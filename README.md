@@ -10,4 +10,9 @@ Basic template for creating a plugin for Xcode4.
 
 ## Usage
 
-The default plugin file links against AppKit and Foundation, and, when built (and Xcode is restarted), creates a menu item labeled "Do Action" in the File menu. Pressing the menu item should open an alert. Customize at will!
+The default plugin file links against `AppKit` and `Foundation`, and, when built (and Xcode is restarted), creates a menu item labeled "Do Action" in the File menu. Pressing the menu item should open an alert. Customize at will!
+
+## Plugin Debugging Notes
+
+- I would recommend keeping a console open with `tail -f /var/log/system.log` running, for that special moment when you crash Xcode, or want to see the output of your `NSLog()` statements.
+- Plugins use ObjC GC, so remember to `retain` and `release` your things. :D
