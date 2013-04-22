@@ -10,6 +10,12 @@
 	<true/>
 	<key>Description</key>
 	<string>This template builds an Xcode plugin.</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Platforms</key>
+	<array>
+	  <string>com.apple.platform.macosx</string>
+	</array>
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.bundleBase</string>
