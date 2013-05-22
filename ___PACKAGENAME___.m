@@ -3,7 +3,7 @@
 //  ___PACKAGENAME___
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
+//  ___COPYRIGHT___
 //
 
 #import "___PACKAGENAME___.h"
@@ -26,13 +26,13 @@
         // Create menu items, initialize UI, etc.
 
         // Sample Menu Item:
-        NSMenuItem *viewMenuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
-        if (viewMenuItem) {
-            [[viewMenuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *sample = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
-            [sample setTarget:self];
-            [[viewMenuItem submenu] addItem:sample];
-            [sample release];
+        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
+        if (menuItem) {
+            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
+            [actionMenuItem setTarget:self];
+            [[menuItem submenu] addItem:actionMenuItem];
+            [actionMenuItem release];
         }
     }
     return self;
