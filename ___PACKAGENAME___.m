@@ -15,9 +15,12 @@
 {
     static id sharedPlugin = nil;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedPlugin = [[self alloc] init];
-    });
+    NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
+    if ([currentApplicationName isEqual:@"Xcode"]) {
+        dispatch_once(&onceToken, ^{
+            sharedPlugin = [[self alloc] initWithBundle:plugin];
+        });
+    }
 }
 
 - (id)init
