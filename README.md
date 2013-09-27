@@ -21,7 +21,7 @@ The default plugin file links against `AppKit` and `Foundation`, and, when built
 - Unlike Xcode 4, Xcode 5 uses ARC.
 - Add the build UUIDs for the versions of Xcode you wish to support to `DVTPlugInCompatibilityUUIDs` in `Info.plist`. This can be found by running:
 
-    defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+  <pre>defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</pre>
 
 
 
