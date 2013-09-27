@@ -5,11 +5,11 @@
   <key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
-	<string>me.delisa.XcodePluginBase</string>
+	<string>me.delisa.Xcode5PluginBase</string>
 	<key>Concrete</key>
 	<true/>
 	<key>Description</key>
-	<string>This template builds an Xcode plugin.</string>
+	<string>This template builds an Xcode5-compatible plugin.</string>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Platforms</key>
@@ -105,6 +105,10 @@
 &lt;false/&gt;
 &lt;key&gt;XC4Compatible&lt;/key&gt;
 &lt;true/&gt;
+&lt;key&gt;DVTPlugInCompatibilityUUIDs&lt;/key&gt;
+&lt;array&gt;
+&lt;string&gt;37B30044-3B14-46BA-ABAA-F01000C27B63&lt;/string&gt;
+&lt;/array&gt;
 </string>
 	</dict>
 </dict>
