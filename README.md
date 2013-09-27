@@ -1,13 +1,13 @@
-# Xcode4 Plugin Template
+# Xcode5 Plugin Template
 
-Basic template for creating a plugin for Xcode4.
+Basic template for creating a plugin for Xcode 5.
 
 
 ## Installation
 
-- Clone or copy this project to `~/Library/Developer/Xcode/Templates/Project Templates/Application Plug-in/Xcode4 Plugin.xctemplate`. (Create the `Templates/Project Templates/Application Plug-in` subdirectories if they do not already exist.)
+- Clone or copy this project to `~/Library/Developer/Xcode/Templates/Project Templates/Application Plug-in/Xcode5 Plugin.xctemplate`. (Create the `Templates/Project Templates/Application Plug-in` subdirectories if they do not already exist.)
 - Restart Xcode
-- When creating a new Xcode plugin, create a new project and select **Xcode4 Plugin** from `OS X > Application Plug-in`.
+- When creating a new Xcode plugin, create a new project and select **Xcode5 Plugin** from `OS X > Application Plug-in`.
 
 
 ## Usage
@@ -18,8 +18,13 @@ The default plugin file links against `AppKit` and `Foundation`, and, when built
 ## Notes
 
 - Set `XCPluginHasUI` in `Info.plist` to `YES` to disable your plugin
+- Unlike Xcode 4, Xcode 5 uses ARC.
+- Add the build UUIDs for the versions of Xcode you wish to support to `DVTPlugInCompatibilityUUIDs` in `Info.plist`. This can be found by running:
+
+    defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+
+
 
 ### Plugin Debugging
 
 - I would recommend keeping a console open with `tail -f /var/log/system.log` running, for that special moment when you crash Xcode, or want to see the output of your `NSLog()` statements.
-- Plugins use ObjC GC, so remember to `retain` and `release` your things. :D
