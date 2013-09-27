@@ -35,8 +35,6 @@
 			<dict>
         <key>INSTALL_PATH</key>
 				<string>/Library/Application Support/Developer/Shared/Xcode/Plug-ins</string>
-				<key>GCC_ENABLE_OBJC_GC</key>
-				<string>required</string>
         <key>WRAPPER_EXTENSION</key>
 				<string>xcplugin</string>
         <key>COMBINE_HIDPI_IMAGES</key>
