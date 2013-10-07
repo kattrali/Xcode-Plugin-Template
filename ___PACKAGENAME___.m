@@ -8,8 +8,14 @@
 
 #import "___PACKAGENAME___.h"
 
-@implementation ___PACKAGENAME___
+static ___PACKAGENAME___ *sharedPlugin;
 
+@interface ___PACKAGENAME___()
+
+@property (nonatomic, strong) NSBundle *bundle;
+@end
+
+@implementation ___PACKAGENAME___
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
@@ -23,9 +29,12 @@
     }
 }
 
-- (id)init
+- (id)initWithBundle:(NSBundle *)plugin {
 {
     if (self = [super init]) {
+        // reference to plugin's bundle, for resource acccess
+        self.bundle = plugin;
+        
         // Create menu items, initialize UI, etc.
 
         // Sample Menu Item:
