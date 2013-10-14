@@ -1,64 +1,38 @@
-//
-//  ___PACKAGENAME___.m
-//  ___PACKAGENAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  ___COPYRIGHT___
-//
 
-#import "___PACKAGENAME___.h"
+//  ___PACKAGENAME___.m in ___PACKAGENAME___
+//  Created by ___FULLUSERNAME___ on ___DATE___. ___COPYRIGHT___
 
-static ___PACKAGENAME___ *sharedPlugin;
+#import <AppKit/AppKit.h>
 
-@interface ___PACKAGENAME___()
+@interface ___PACKAGENAME___ : NSObject @property (strong) NSBundle *bundle; @end
 
-@property (nonatomic, strong) NSBundle *bundle;
-@end
+static ___PACKAGENAME___ *sharedPlugin; @implementation ___PACKAGENAME___
 
-@implementation ___PACKAGENAME___
++ (void) pluginDidLoad:(NSBundle*)plugin {
 
-+ (void)pluginDidLoad:(NSBundle *)plugin
-{
     static id sharedPlugin = nil;
     static dispatch_once_t onceToken;
-    NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
-    if ([currentApplicationName isEqual:@"Xcode"]) {
-        dispatch_once(&onceToken, ^{
-            sharedPlugin = [[self alloc] initWithBundle:plugin];
-        });
-    }
+    if ([NSBundle.mainBundle.infoDictionary[@"CFBundleName"] isEqualToString:@"Xcode"])
+        dispatch_once(&onceToken, ^{ sharedPlugin = [self.alloc initWithBundle:plugin]; });
 }
+- (id) initWithBundle:(NSBundle *)plugin {   if (self != super.init) return nil;
 
-- (id)initWithBundle:(NSBundle *)plugin {
-{
-    if (self = [super init]) {
-        // reference to plugin's bundle, for resource acccess
-        self.bundle = plugin;
-        
-        // Create menu items, initialize UI, etc.
+    self.bundle = plugin;            // reference to plugin's bundle, for resource acccess
 
-        // Sample Menu Item:
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
-        if (menuItem) {
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
-        }
+    NSMenuItem *xMenu, *actionMenu;  // Just a sample Menu Item. Create your own menus, initialize UI, etc.
+     if ((xMenu = [[NSApp mainMenu] itemWithTitle:@"File"])) {
+         [xMenu.submenu addItem:NSMenuItem.separatorItem];
+         [xMenu.submenu addItem:actionMenu = [NSMenuItem.alloc initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""]];
+         [actionMenu setTarget:self];
     }
+	NSLog(@"[%@] Plugin Loaded AOK!", _bundle.bundleIdentifier.pathExtension);
     return self;
 }
+- (void) doMenuAction {              // Sample Action, for menu item:
 
-// Sample Action, for menu item:
-- (void)doMenuAction
-{
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Hello, World" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
-    [alert runModal];
+    [[NSAlert alertWithMessageText:[NSString stringWithFormat:@"Hello, from %@", _bundle.bundleIdentifier]
+                      defaultButton:@"Rad!" alternateButton:@"Drat!" otherButton:nil informativeTextWithFormat:@""]runModal];
 }
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
+- (void) dealloc { [NSNotificationCenter.defaultCenter removeObserver:self]; }
 
 @end
