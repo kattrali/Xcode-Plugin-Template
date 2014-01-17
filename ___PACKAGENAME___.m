@@ -30,7 +30,6 @@ static ___PACKAGENAME___ *sharedPlugin;
 }
 
 - (id)initWithBundle:(NSBundle *)plugin {
-{
     if (self = [super init]) {
         // reference to plugin's bundle, for resource acccess
         self.bundle = plugin;
