@@ -9,6 +9,7 @@
 #import "___PACKAGENAME___.h"
 
 static ___PACKAGENAME___ *sharedPlugin;
+static NSString * const pluginMenuTitle = @"Plug-ins";
 
 @interface ___PACKAGENAME___()
 
@@ -48,6 +49,20 @@ static ___PACKAGENAME___ *sharedPlugin;
     }
     return self;
 }
+
+- (NSMenu*)pluginMenu {
+    NSMenu *pluginMenu = [[[NSApp mainMenu] itemWithTitle:pluginMenuTitle] submenu];
+    if (!pluginMenu) {
+        pluginMenu = [[NSMenu alloc] initWithTitle:pluginMenuTitle];
+        
+        NSMenuItem *pluginMenuItem = [[NSMenuItem alloc] initWithTitle:pluginMenuTitle action:nil keyEquivalent:@""];
+        pluginMenuItem.submenu = pluginMenu;
+        
+        [[NSApp mainMenu] addItem:pluginMenuItem];
+    }
+    return pluginMenu;
+}
+
 
 // Sample Action, for menu item:
 - (void)doMenuAction
