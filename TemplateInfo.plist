@@ -110,6 +110,8 @@
 &lt;string&gt;640F884E-CE55-4B40-87C0-8869546CAB7A&lt;/string&gt;
 &lt;string&gt;37B30044-3B14-46BA-ABAA-F01000C27B63&lt;/string&gt;
 &lt;/array&gt;
+&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;___PACKAGENAME___&lt;/string&gt;
 </string>
 	</dict>
 </dict>
