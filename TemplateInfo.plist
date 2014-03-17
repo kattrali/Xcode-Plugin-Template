@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Kind</key>
+	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
 	<string>me.delisa.Xcode5PluginBase</string>
@@ -10,41 +10,39 @@
 	<true/>
 	<key>Description</key>
 	<string>This template builds an Xcode5-compatible plugin.</string>
-	<key>Kind</key>
-	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Platforms</key>
 	<array>
-	  <string>com.apple.platform.macosx</string>
+		<string>com.apple.platform.macosx</string>
 	</array>
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.bundleBase</string>
-    <string>com.apple.dt.unit.macBase</string>
+		<string>com.apple.dt.unit.macBase</string>
 	</array>
 	<key>Targets</key>
 	<array>
 		<dict>
-      <key>ProductType</key>
+			<key>ProductType</key>
 			<string>com.apple.product-type.bundle</string>
-      <key>Frameworks</key>
+			<key>Frameworks</key>
 			<array>
 				<string>AppKit</string>
 				<string>Foundation</string>
 			</array>
 			<key>SharedSettings</key>
 			<dict>
-        <key>INSTALL_PATH</key>
+				<key>INSTALL_PATH</key>
 				<string>/Library/Application Support/Developer/Shared/Xcode/Plug-ins</string>
-        <key>WRAPPER_EXTENSION</key>
+				<key>WRAPPER_EXTENSION</key>
 				<string>xcplugin</string>
-        <key>COMBINE_HIDPI_IMAGES</key>
-        <string>YES</string>
-        <key>DEPLOYMENT_LOCATION</key>
-        <string>YES</string>
-        <key>DSTROOT</key>
-        <string>$(HOME)</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>DEPLOYMENT_LOCATION</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>$(HOME)</string>
 			</dict>
-      <key>BuildPhases</key>
+			<key>BuildPhases</key>
 			<array>
 				<dict>
 					<key>Class</key>
@@ -59,23 +57,23 @@
 					<string>Resources</string>
 				</dict>
 			</array>
-    </dict>
-  </array>
-  <key>Nodes</key>
+		</dict>
+	</array>
+	<key>Nodes</key>
 	<array>
 		<string>___PACKAGENAME___.h</string>
 		<string>___PACKAGENAME___.m</string>
 		<string>___PACKAGENAME___-Prefix.pch:objC:importFoundation</string>
 		<string>___PACKAGENAME___-Info.plist:bundle</string>
 	</array>
-  <key>Definitions</key>
+	<key>Definitions</key>
 	<dict>
-    <key>___PACKAGENAME___.h</key>
+		<key>___PACKAGENAME___.h</key>
 		<dict>
 			<key>Path</key>
 			<string>___PACKAGENAME___.h</string>
 		</dict>
-    <key>___PACKAGENAME___.m</key>
+		<key>___PACKAGENAME___.m</key>
 		<dict>
 			<key>Path</key>
 			<string>___PACKAGENAME___.m</string>
@@ -105,13 +103,16 @@
 &lt;false/&gt;
 &lt;key&gt;XC4Compatible&lt;/key&gt;
 &lt;true/&gt;
+&lt;key&gt;XC5Compatible&lt;/key&gt;
+&lt;true/&gt;
+&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;${EXECUTABLE_NAME}&lt;/string&gt;
 &lt;key&gt;DVTPlugInCompatibilityUUIDs&lt;/key&gt;
 &lt;array&gt;
 &lt;string&gt;640F884E-CE55-4B40-87C0-8869546CAB7A&lt;/string&gt;
 &lt;string&gt;37B30044-3B14-46BA-ABAA-F01000C27B63&lt;/string&gt;
 &lt;string&gt;A2E4D43F-41F4-4FB9-BB94-7177011C9AED&lt;/string&gt;
-&lt;/array&gt;
-</string>
+&lt;/array&gt;</string>
 	</dict>
 </dict>
 </plist>
