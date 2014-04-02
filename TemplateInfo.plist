@@ -18,6 +18,7 @@
 	<array>
 		<string>com.apple.dt.unit.bundleBase</string>
 		<string>com.apple.dt.unit.macBase</string>
+		<string>com.apple.dt.unit.prefixable</string>
 	</array>
 	<key>Targets</key>
 	<array>
@@ -61,19 +62,19 @@
 	</array>
 	<key>Nodes</key>
 	<array>
-		<string>___PACKAGENAME___.h</string>
-		<string>___PACKAGENAME___.m</string>
+		<string>___VARIABLE_classPrefix:identifier______PACKAGENAME___.h</string>
+		<string>___VARIABLE_classPrefix:identifier______PACKAGENAME___.m</string>
 		<string>___PACKAGENAME___-Prefix.pch:objC:importFoundation</string>
 		<string>___PACKAGENAME___-Info.plist:bundle</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
-		<key>___PACKAGENAME___.h</key>
+		<key>___VARIABLE_classPrefix:identifier______PACKAGENAME___.h</key>
 		<dict>
 			<key>Path</key>
 			<string>___PACKAGENAME___.h</string>
 		</dict>
-		<key>___PACKAGENAME___.m</key>
+		<key>___VARIABLE_classPrefix:identifier______PACKAGENAME___.m</key>
 		<dict>
 			<key>Path</key>
 			<string>___PACKAGENAME___.m</string>
@@ -106,7 +107,7 @@
 &lt;key&gt;XC5Compatible&lt;/key&gt;
 &lt;true/&gt;
 &lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;${EXECUTABLE_NAME}&lt;/string&gt;
+&lt;string&gt;___VARIABLE_classPrefix:identifier______PACKAGENAME___&lt;/string&gt;
 &lt;key&gt;DVTPlugInCompatibilityUUIDs&lt;/key&gt;
 &lt;array&gt;
 &lt;string&gt;640F884E-CE55-4B40-87C0-8869546CAB7A&lt;/string&gt;

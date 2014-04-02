@@ -1,21 +1,21 @@
 //
-//  ___PACKAGENAME___.m
-//  ___PACKAGENAME___
+//  ___VARIABLE_classPrefix:identifier______PACKAGENAME___.m
+//  ___VARIABLE_classPrefix:identifier______PACKAGENAME___
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  ___COPYRIGHT___
 //
 
-#import "___PACKAGENAME___.h"
+#import "___VARIABLE_classPrefix:identifier______PACKAGENAME___.h"
 
-static ___PACKAGENAME___ *sharedPlugin;
+static ___VARIABLE_classPrefix:identifier______PACKAGENAME___ *sharedPlugin;
 
-@interface ___PACKAGENAME___()
+@interface ___VARIABLE_classPrefix:identifier______PACKAGENAME___()
 
 @property (nonatomic, strong) NSBundle *bundle;
 @end
 
-@implementation ___PACKAGENAME___
+@implementation ___VARIABLE_classPrefix:identifier______PACKAGENAME___
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
