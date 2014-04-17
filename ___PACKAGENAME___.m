@@ -19,7 +19,6 @@ static ___VARIABLE_classPrefix:identifier______PACKAGENAME___ *sharedPlugin;
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
-    static id sharedPlugin = nil;
     static dispatch_once_t onceToken;
     NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
     if ([currentApplicationName isEqual:@"Xcode"]) {
