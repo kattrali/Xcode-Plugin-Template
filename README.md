@@ -5,7 +5,7 @@ Basic template for creating a plugin for Xcode 5.
 
 ## Installation
 
-- Clone or copy this project to `~/Library/Developer/Xcode/Templates/Project Templates/Application Plug-in/Xcode5 Plugin.xctemplate`. (Create the `Templates/Project Templates/Application Plug-in` subdirectories if they do not already exist.)
+- Clone or copy this project to `~/Library/Developer/Xcode/Templates/Application Plug-in/Xcode5 Plugin.xctemplate`. (Create the `Templates/Project Templates/Application Plug-in` subdirectories if they do not already exist.)
 - Restart Xcode
 - When creating a new Xcode plugin, create a new project and select **Xcode5 Plugin** from `OS X > Application Plug-in`.
 
