@@ -1,21 +1,21 @@
 //
-//  ___VARIABLE_classPrefix:identifier______PACKAGENAME___.m
-//  ___VARIABLE_classPrefix:identifier______PACKAGENAME___
+//  ___PACKAGENAME___.m
+//  ___PACKAGENAME___
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
 //  ___COPYRIGHT___
 //
 
-#import "___VARIABLE_classPrefix:identifier______PACKAGENAME___.h"
+#import "___PACKAGENAME___.h"
 
-static ___VARIABLE_classPrefix:identifier______PACKAGENAME___ *sharedPlugin;
+static ___PACKAGENAME___ *sharedPlugin;
 
-@interface ___VARIABLE_classPrefix:identifier______PACKAGENAME___()
+@interface ___PACKAGENAME___()
 
-@property (nonatomic, strong) NSBundle *bundle;
+@property (nonatomic, strong, readwrite) NSBundle *bundle;
 @end
 
-@implementation ___VARIABLE_classPrefix:identifier______PACKAGENAME___
+@implementation ___PACKAGENAME___
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
@@ -28,16 +28,21 @@ static ___VARIABLE_classPrefix:identifier______PACKAGENAME___ *sharedPlugin;
     }
 }
 
++ (instancetype)sharedPlugin
+{
+    return sharedPlugin;
+}
+
 - (id)initWithBundle:(NSBundle *)plugin
 {
     if (self = [super init]) {
-        // reference to plugin's bundle, for resource acccess
+        // reference to plugin's bundle, for resource access
         self.bundle = plugin;
         
         // Create menu items, initialize UI, etc.
 
         // Sample Menu Item:
-        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"File"];
+        NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
         if (menuItem) {
             [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
             NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Do Action" action:@selector(doMenuAction) keyEquivalent:@""];
