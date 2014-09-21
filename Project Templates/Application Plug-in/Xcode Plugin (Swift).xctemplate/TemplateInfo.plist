@@ -9,7 +9,7 @@
 	<key>Concrete</key>
 	<true/>
 	<key>Description</key>
-	<string>This template builds an Xcode6-compatible plugin.</string>
+	<string>This template builds an Xcode plugin compatible with Xcode version 6.0+. Requires OS X 10.10+ to build.</string>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.macosx</string>
