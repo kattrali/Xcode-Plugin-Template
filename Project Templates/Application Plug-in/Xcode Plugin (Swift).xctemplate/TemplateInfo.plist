@@ -5,11 +5,11 @@
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
-	<string>me.delisa.Xcode5PluginBase</string>
+	<string>me.delisa.Xcode6SwiftPluginBase</string>
 	<key>Concrete</key>
 	<true/>
 	<key>Description</key>
-	<string>This template builds an Xcode5-compatible plugin.</string>
+	<string>This template builds an Xcode plugin compatible with Xcode version 6.0+. Requires OS X 10.10+ to build.</string>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.macosx</string>
@@ -62,24 +62,17 @@
 	</array>
 	<key>Nodes</key>
 	<array>
-		<string>___VARIABLE_classPrefix:identifier______PACKAGENAME___.h</string>
-		<string>___VARIABLE_classPrefix:identifier______PACKAGENAME___.m</string>
-		<string>___PACKAGENAME___-Prefix.pch:objC:importFoundation</string>
-		<string>___PACKAGENAME___-Info.plist:bundle</string>
+		<string>___PACKAGENAME___.swift</string>
+		<string>Info.plist:bundle</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
-		<key>___VARIABLE_classPrefix:identifier______PACKAGENAME___.h</key>
+		<key>___PACKAGENAME___.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>___PACKAGENAME___.h</string>
+			<string>___PACKAGENAME___.swift</string>
 		</dict>
-		<key>___VARIABLE_classPrefix:identifier______PACKAGENAME___.m</key>
-		<dict>
-			<key>Path</key>
-			<string>___PACKAGENAME___.m</string>
-		</dict>
-		<key>___PACKAGENAME___-Info.plist:bundle</key>
+		<key>Info.plist:bundle</key>
 		<string>&lt;key&gt;CFBundleDevelopmentRegion&lt;/key&gt;
 &lt;string&gt;English&lt;/string&gt;
 &lt;key&gt;CFBundleExecutable&lt;/key&gt;
@@ -98,21 +91,15 @@
 &lt;string&gt;1&lt;/string&gt;
 &lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
 &lt;string&gt;1.0&lt;/string&gt;
-&lt;key&gt;XCGCReady&lt;/key&gt;
-&lt;true/&gt;
 &lt;key&gt;XCPluginHasUI&lt;/key&gt;
 &lt;false/&gt;
 &lt;key&gt;XC4Compatible&lt;/key&gt;
 &lt;true/&gt;
-&lt;key&gt;XC5Compatible&lt;/key&gt;
-&lt;true/&gt;
 &lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;___VARIABLE_classPrefix:identifier______PACKAGENAME___&lt;/string&gt;
+&lt;string&gt;___PACKAGENAME___&lt;/string&gt;
 &lt;key&gt;DVTPlugInCompatibilityUUIDs&lt;/key&gt;
 &lt;array&gt;
-&lt;string&gt;640F884E-CE55-4B40-87C0-8869546CAB7A&lt;/string&gt;
-&lt;string&gt;37B30044-3B14-46BA-ABAA-F01000C27B63&lt;/string&gt;
-&lt;string&gt;A2E4D43F-41F4-4FB9-BB94-7177011C9AED&lt;/string&gt;
+&lt;string&gt;C4A681B0-4A26-480E-93EC-1218098B9AA0&lt;/string&gt;
 &lt;/array&gt;</string>
 	</dict>
 </dict>
