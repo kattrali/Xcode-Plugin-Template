@@ -7,29 +7,32 @@
 
 import AppKit
 
-var sharedPlugin = nil
+var sharedPlugin: NSObject? = nil
 
 class ___PACKAGENAME___: NSObject {
     var bundle: NSBundle
 
     class func pluginDidLoad(bundle: NSBundle) {
-    	if NSBundle.mainBundle.infoDictionary["CFBundleName"] == "Xcode" {
-	        sharedPlugin = self(bundle: bundle)
-    	}
+        let appName = NSBundle.mainBundle().infoDictionary["CFBundleName"] as NSString
+        if appName == "Xcode" {
+            sharedPlugin = ___PACKAGENAME___(bundle: bundle)
+        }
     }
 
     init(bundle: NSBundle) {
     	self.bundle = bundle
+
+        super.init()
     	createMenuItems()
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter.removeObserver(self)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     func createMenuItems() {
-    	var item = NSApp.mainMenu.itemWithTitle("Edit")
-    	if item {
+    	var item = NSApp.mainMenu!.itemWithTitle("Edit")
+    	if item != nil {
     		var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
     		actionMenuItem.target = self
     		item.submenu.addItem(NSMenuItem.separatorItem())
@@ -38,6 +41,8 @@ class ___PACKAGENAME___: NSObject {
     }
 
     func doMenuAction() {
-    	NSAlert.alertWithMessageText("Hello, World!", defaultButton:nil, alternateButton:nil, otherButton:nil, informativeTextWithFormat:"").runModal()
+        let error = NSError(domain: "Hello World!", code:42, userInfo:nil)
+        NSAlert(error: error).runModal()
     }
 }
+
