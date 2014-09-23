@@ -36,6 +36,8 @@
 				<string>/Library/Application Support/Developer/Shared/Xcode/Plug-ins</string>
 				<key>WRAPPER_EXTENSION</key>
 				<string>xcplugin</string>
+				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
+				<string>YES</string>
 				<key>COMBINE_HIDPI_IMAGES</key>
 				<string>YES</string>
 				<key>DEPLOYMENT_LOCATION</key>
