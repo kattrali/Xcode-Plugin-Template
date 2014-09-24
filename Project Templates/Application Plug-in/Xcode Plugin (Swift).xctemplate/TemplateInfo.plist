@@ -69,10 +69,20 @@
 	<key>Nodes</key>
 	<array>
 		<string>___PACKAGENAME___.swift</string>
+		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
 		<string>Info.plist:bundle</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
+		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</key>
+		<dict>
+			<key>Group</key>
+        <array>
+          <string>Supporting Files</string>
+        </array>
+			<key>Path</key>
+			<string>___PACKAGENAME___.xcscheme</string>
+		</dict>
 		<key>___PACKAGENAME___.swift</key>
 		<dict>
 			<key>Path</key>
