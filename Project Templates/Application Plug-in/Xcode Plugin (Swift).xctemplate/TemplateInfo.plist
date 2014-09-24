@@ -41,7 +41,7 @@
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(DT_TOOLCHAIN_DIR)/usr/lib/swift/macosx</string>
 				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.9</string>
+				<string>___RUNNINGOSXVERSION___</string>
 				<key>COMBINE_HIDPI_IMAGES</key>
 				<string>YES</string>
 				<key>DEPLOYMENT_LOCATION</key>
