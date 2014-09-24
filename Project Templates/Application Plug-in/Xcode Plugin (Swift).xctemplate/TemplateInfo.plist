@@ -38,6 +38,10 @@
 				<string>xcplugin</string>
 				<key>EMBEDDED_CONTENT_CONTAINS_SWIFT</key>
 				<string>YES</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(DT_TOOLCHAIN_DIR)/usr/lib/swift/macosx</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.9</string>
 				<key>COMBINE_HIDPI_IMAGES</key>
 				<string>YES</string>
 				<key>DEPLOYMENT_LOCATION</key>
@@ -78,9 +82,9 @@
 		<string>&lt;key&gt;CFBundleDevelopmentRegion&lt;/key&gt;
 &lt;string&gt;English&lt;/string&gt;
 &lt;key&gt;CFBundleExecutable&lt;/key&gt;
-&lt;string&gt;${EXECUTABLE_NAME}&lt;/string&gt;
+&lt;string&gt;$(EXECUTABLE_NAME)&lt;/string&gt;
 &lt;key&gt;CFBundleName&lt;/key&gt;
-&lt;string&gt;${PRODUCT_NAME}&lt;/string&gt;
+&lt;string&gt;$(PRODUCT_NAME)&lt;/string&gt;
 &lt;key&gt;CFBundleIconFile&lt;/key&gt;
 &lt;string&gt;&lt;/string&gt;
 &lt;key&gt;CFBundleInfoDictionaryVersion&lt;/key&gt;
@@ -89,6 +93,8 @@
 &lt;string&gt;BNDL&lt;/string&gt;
 &lt;key&gt;CFBundleSignature&lt;/key&gt;
 &lt;string&gt;????&lt;/string&gt;
+&lt;key&gt;LSMinimumSystemVersion&lt;/key&gt;
+&lt;string&gt;$(MACOSX_DEPLOYMENT_TARGET)&lt;/string&gt;
 &lt;key&gt;CFBundleVersion&lt;/key&gt;
 &lt;string&gt;1&lt;/string&gt;
 &lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
