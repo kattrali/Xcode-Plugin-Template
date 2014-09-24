@@ -7,7 +7,7 @@
 
 import AppKit
 
-var sharedPlugin: NSObject? = nil
+var sharedPlugin: ___PACKAGENAME___? = nil
 
 class ___PACKAGENAME___: NSObject {
     var bundle: NSBundle
