@@ -56,7 +56,8 @@ static ___PACKAGENAME___ *sharedPlugin;
 // Sample Action, for menu item:
 - (void)doMenuAction
 {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"Hello, World" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Hello, World"];
     [alert runModal];
 }
 
