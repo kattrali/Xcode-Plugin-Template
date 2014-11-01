@@ -2,7 +2,7 @@
 //  ___PACKAGENAME___.swift
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
-//  ___COPYRIGHT___
+//___COPYRIGHT___
 //
 
 import AppKit
@@ -20,10 +20,10 @@ class ___PACKAGENAME___: NSObject {
     }
 
     init(bundle: NSBundle) {
-    	self.bundle = bundle
+        self.bundle = bundle
 
         super.init()
-    	createMenuItems()
+        createMenuItems()
     }
 
     deinit {
@@ -31,13 +31,13 @@ class ___PACKAGENAME___: NSObject {
     }
 
     func createMenuItems() {
-    	var item = NSApp.mainMenu!.itemWithTitle("Edit")
-    	if item != nil {
-    		var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
-    		actionMenuItem.target = self
-    		item.submenu.addItem(NSMenuItem.separatorItem())
-    		item.submenu.addItem(actionMenuItem)
-    	}
+        var item = NSApp.mainMenu!.itemWithTitle("Edit")
+        if item != nil {
+            var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
+            actionMenuItem.target = self
+            item.submenu.addItem(NSMenuItem.separatorItem())
+            item.submenu.addItem(actionMenuItem)
+        }
     }
 
     func doMenuAction() {
