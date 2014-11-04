@@ -13,7 +13,7 @@ class ___PACKAGENAME___: NSObject {
     var bundle: NSBundle
 
     class func pluginDidLoad(bundle: NSBundle) {
-        let appName = NSBundle.mainBundle().infoDictionary["CFBundleName"] as NSString
+        let appName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as NSString
         if appName == "Xcode" {
             sharedPlugin = ___PACKAGENAME___(bundle: bundle)
         }
@@ -31,12 +31,12 @@ class ___PACKAGENAME___: NSObject {
     }
 
     func createMenuItems() {
-        var item = NSApp.mainMenu!.itemWithTitle("Edit")
+        var item = NSApp.mainMenu!!.itemWithTitle("Edit")
         if item != nil {
             var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
             actionMenuItem.target = self
-            item.submenu.addItem(NSMenuItem.separatorItem())
-            item.submenu.addItem(actionMenuItem)
+            item!.submenu!.addItem(NSMenuItem.separatorItem())
+            item!.submenu!.addItem(actionMenuItem)
         }
     }
 
