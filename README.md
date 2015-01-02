@@ -8,7 +8,7 @@ Basic template for creating a plugin for Xcode 6+.
 
 ## Usage
 
-The default plugin file links against `AppKit` and `Foundation`, and, when built (and Xcode is restarted), creates a menu item labeled "Do Action" in the File menu. Pressing the menu item should open an alert. Customize at will!
+The default plugin file links against `AppKit` and `Foundation`, and, when built (and Xcode is restarted), creates a menu item labeled "Do Action" in the Edit menu. Pressing the menu item should open an alert. Customize at will!
 
 **Note:** Compiling the template with Swift requires Xcode 6.1 or greater.
 
