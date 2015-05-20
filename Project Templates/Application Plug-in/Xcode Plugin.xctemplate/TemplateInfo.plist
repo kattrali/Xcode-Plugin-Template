@@ -137,6 +137,7 @@
 						<key>Nodes</key>
 						<array>
 							<string>___PACKAGENAME___.swift</string>
+							<string>NSObject_Extension.swift</string>
 						</array>
 						<key>Definitions</key>
 						<dict>
@@ -144,6 +145,11 @@
 							<dict>
 								<key>Path</key>
 								<string>___PACKAGENAME___.swift</string>
+							</dict>
+							<key>NSObject_Extension.swift</key>
+							<dict>
+								<key>Path</key>
+								<string>NSObject_Extension.swift</string>
 							</dict>
 						</dict>
 					</dict>
@@ -172,6 +178,8 @@
 						<array>
 							<string>___PACKAGENAME___.h</string>
 							<string>___PACKAGENAME___.m</string>
+							<string>NSObject_Extension.h</string>
+							<string>NSObject_Extension.m</string>
 						</array>
 						<key>Definitions</key>
 						<dict>
@@ -184,6 +192,16 @@
 							<dict>
 								<key>Path</key>
 								<string>___PACKAGENAME___.m</string>
+							</dict>
+							<key>NSObject_Extension.h</key>
+							<dict>
+								<key>Path</key>
+								<string>NSObject_Extension.h</string>
+							</dict>
+							<key>NSObject_Extension.m</key>
+							<dict>
+								<key>Path</key>
+								<string>NSObject_Extension.m</string>
 							</dict>
 						</dict>
 					</dict>

@@ -8,25 +8,12 @@
 
 #import "___PACKAGENAME___.h"
 
-static ___PACKAGENAME___ *sharedPlugin;
-
 @interface ___PACKAGENAME___()
 
 @property (nonatomic, strong, readwrite) NSBundle *bundle;
 @end
 
 @implementation ___PACKAGENAME___
-
-+ (void)pluginDidLoad:(NSBundle *)plugin
-{
-    static dispatch_once_t onceToken;
-    NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
-    if ([currentApplicationName isEqual:@"Xcode"]) {
-        dispatch_once(&onceToken, ^{
-            sharedPlugin = [[self alloc] initWithBundle:plugin];
-        });
-    }
-}
 
 + (instancetype)sharedPlugin
 {

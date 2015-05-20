@@ -12,13 +12,6 @@ var sharedPlugin: ___PACKAGENAME___?
 class ___PACKAGENAME___: NSObject {
     var bundle: NSBundle
 
-    class func pluginDidLoad(bundle: NSBundle) {
-        let appName = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? NSString
-        if appName == "Xcode" {
-            sharedPlugin = ___PACKAGENAME___(bundle: bundle)
-        }
-    }
-
     init(bundle: NSBundle) {
         self.bundle = bundle
 
