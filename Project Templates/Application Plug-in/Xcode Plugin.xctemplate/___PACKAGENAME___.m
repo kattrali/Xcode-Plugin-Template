@@ -35,8 +35,10 @@
 
 - (void)didApplicationFinishLaunchingNotification:(NSNotification*)noti
 {
-    // Create menu items, initialize UI, etc.
+    //removeObserver
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
     
+    // Create menu items, initialize UI, etc.
     // Sample Menu Item:
     NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
     if (menuItem) {
