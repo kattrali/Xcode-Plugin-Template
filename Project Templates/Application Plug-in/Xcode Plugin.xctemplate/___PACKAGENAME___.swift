@@ -32,7 +32,7 @@ class ___PACKAGENAME___: NSObject {
     func createMenuItems() {
         removeObserver()
 
-        var item = NSApp.mainMenu!!.itemWithTitle("Edit")
+        var item = NSApp.mainMenu!.itemWithTitle("Edit")
         if item != nil {
             var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
             actionMenuItem.target = self
