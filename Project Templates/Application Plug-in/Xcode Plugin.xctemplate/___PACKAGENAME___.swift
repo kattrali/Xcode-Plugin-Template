@@ -34,15 +34,15 @@ class ___PACKAGENAME___: NSObject {
         
         guard let mainMenu = NSApp.mainMenu else { return }
         guard let item = mainMenu.itemWithTitle("Edit") else { return }
+        guard let submenu = item.submenu else { return }
         
         let actionMenuItem = NSMenuItem(title:"Do Action", action:#selector(self.doMenuAction), keyEquivalent:"")
         actionMenuItem.target = self
         
-        if let submenu = item.submenu {
-            submenu.addItem(NSMenuItem.separatorItem())
-            submenu.addItem(actionMenuItem)
-        }
+        submenu.addItem(NSMenuItem.separatorItem())
+        submenu.addItem(actionMenuItem)
     }
+
     
     func doMenuAction() {
         let error = NSError(domain: "YO from XCSwiftr!", code:42, userInfo:nil)
