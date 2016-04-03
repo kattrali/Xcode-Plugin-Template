@@ -13,36 +13,39 @@ class ___PACKAGENAME___: NSObject {
 
     var bundle: NSBundle
     lazy var center = NSNotificationCenter.defaultCenter()
-
+    
     init(bundle: NSBundle) {
         self.bundle = bundle
-
+        
         super.init()
-        center.addObserver(self, selector: Selector("createMenuItems"), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        center.addObserver(self, selector: #selector(self.createMenuItems), name: NSApplicationDidFinishLaunchingNotification, object: nil)
     }
-
+    
     deinit {
         removeObserver()
     }
-
+    
     func removeObserver() {
         center.removeObserver(self)
     }
-
+    
     func createMenuItems() {
         removeObserver()
-
-        var item = NSApp.mainMenu!.itemWithTitle("Edit")
-        if item != nil {
-            var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
-            actionMenuItem.target = self
-            item!.submenu!.addItem(NSMenuItem.separatorItem())
-            item!.submenu!.addItem(actionMenuItem)
+        
+        guard let mainMenu = NSApp.mainMenu else { return }
+        guard let item = mainMenu.itemWithTitle("Edit") else { return }
+        
+        let actionMenuItem = NSMenuItem(title:"Do Action", action:#selector(self.doMenuAction), keyEquivalent:"")
+        actionMenuItem.target = self
+        
+        if let submenu = item.submenu {
+            submenu.addItem(NSMenuItem.separatorItem())
+            submenu.addItem(actionMenuItem)
         }
     }
-
+    
     func doMenuAction() {
-        let error = NSError(domain: "Hello World!", code:42, userInfo:nil)
+        let error = NSError(domain: "YO from XCSwiftr!", code:42, userInfo:nil)
         NSAlert(error: error).runModal()
     }
 }
