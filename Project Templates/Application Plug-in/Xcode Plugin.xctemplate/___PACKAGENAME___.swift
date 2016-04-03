@@ -16,7 +16,7 @@ class ___PACKAGENAME___: NSObject {
 
     init(bundle: NSBundle) {
         self.bundle = bundle
-        
+
         super.init()
         center.addObserver(self, selector: #selector(self.createMenuItems), name: NSApplicationDidFinishLaunchingNotification, object: nil)
     }
