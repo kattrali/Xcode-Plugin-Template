@@ -18,7 +18,7 @@ class ___PACKAGENAME___: NSObject {
         self.bundle = bundle
 
         super.init()
-        center.addObserver(self, selector: Selector("createMenuItems"), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        center.addObserver(self, selector: #selector(self.createMenuItems), name: NSApplicationDidFinishLaunchingNotification, object: nil)
     }
 
     deinit {
@@ -32,13 +32,15 @@ class ___PACKAGENAME___: NSObject {
     func createMenuItems() {
         removeObserver()
 
-        var item = NSApp.mainMenu!.itemWithTitle("Edit")
-        if item != nil {
-            var actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
-            actionMenuItem.target = self
-            item!.submenu!.addItem(NSMenuItem.separatorItem())
-            item!.submenu!.addItem(actionMenuItem)
-        }
+        guard let mainMenu = NSApp.mainMenu else { return }
+        guard let item = mainMenu.itemWithTitle("Edit") else { return }
+        guard let submenu = item.submenu else { return }
+
+        let actionMenuItem = NSMenuItem(title:"Do Action", action:#selector(self.doMenuAction), keyEquivalent:"")
+        actionMenuItem.target = self
+
+        submenu.addItem(NSMenuItem.separatorItem())
+        submenu.addItem(actionMenuItem)
     }
 
     func doMenuAction() {
