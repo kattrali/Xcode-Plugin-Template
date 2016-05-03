@@ -4,7 +4,7 @@ Basic template for creating a plugin for Xcode 6+.
 
 ## Installation
 
-- Install using [Alcatraz](alcatraz.io)
+- Install using [Alcatraz](http://alcatraz.io/)
 
 ## Usage
 
