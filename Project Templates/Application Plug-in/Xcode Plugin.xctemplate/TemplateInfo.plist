@@ -51,6 +51,7 @@
 	<array>
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
 		<string>Info.plist:xcplugin</string>
+		<string>Info.plist:principalClass</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
@@ -122,6 +123,9 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
+							<key>Info.plist:principalClass</key>
+							<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;___PACKAGENAME___.___PACKAGENAME___&lt;/string&gt;</string>
 							<key>___PACKAGENAME___.swift</key>
 							<dict>
 								<key>Path</key>
@@ -157,6 +161,9 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
+							<key>Info.plist:principalClass</key>
+							<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;___PACKAGENAME___&lt;/string&gt;</string>
 							<key>___PACKAGENAME___.h</key>
 							<dict>
 								<key>Path</key>
