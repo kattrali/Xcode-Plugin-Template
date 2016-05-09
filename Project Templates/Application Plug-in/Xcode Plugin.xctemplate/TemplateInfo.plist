@@ -50,7 +50,7 @@
 	<key>Nodes</key>
 	<array>
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
-		<string>Info.plist:bundle</string>
+		<string>Info.plist:xcplugin</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
@@ -63,33 +63,11 @@
 			<key>Path</key>
 			<string>___PACKAGENAME___.xcscheme</string>
 		</dict>
-		<key>Info.plist:bundle</key>
-		<string>&lt;key&gt;CFBundleDevelopmentRegion&lt;/key&gt;
-&lt;string&gt;English&lt;/string&gt;
-&lt;key&gt;CFBundleExecutable&lt;/key&gt;
-&lt;string&gt;$(EXECUTABLE_NAME)&lt;/string&gt;
-&lt;key&gt;CFBundleName&lt;/key&gt;
-&lt;string&gt;$(PRODUCT_NAME)&lt;/string&gt;
-&lt;key&gt;CFBundleIconFile&lt;/key&gt;
-&lt;string&gt;&lt;/string&gt;
-&lt;key&gt;CFBundleInfoDictionaryVersion&lt;/key&gt;
-&lt;string&gt;6.0&lt;/string&gt;
-&lt;key&gt;CFBundlePackageType&lt;/key&gt;
-&lt;string&gt;BNDL&lt;/string&gt;
-&lt;key&gt;CFBundleSignature&lt;/key&gt;
-&lt;string&gt;????&lt;/string&gt;
-&lt;key&gt;LSMinimumSystemVersion&lt;/key&gt;
-&lt;string&gt;$(MACOSX_DEPLOYMENT_TARGET)&lt;/string&gt;
-&lt;key&gt;CFBundleVersion&lt;/key&gt;
-&lt;string&gt;1&lt;/string&gt;
-&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
-&lt;string&gt;1.0&lt;/string&gt;
-&lt;key&gt;XCPluginHasUI&lt;/key&gt;
+		<key>Info.plist:xcplugin</key>
+		<string>&lt;key&gt;XCPluginHasUI&lt;/key&gt;
 &lt;false/&gt;
 &lt;key&gt;XC4Compatible&lt;/key&gt;
 &lt;true/&gt;
-&lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;___PACKAGENAME___&lt;/string&gt;
 &lt;key&gt;DVTPlugInCompatibilityUUIDs&lt;/key&gt;
 &lt;array&gt;
 &lt;string&gt;C4A681B0-4A26-480E-93EC-1218098B9AA0&lt;/string&gt;
