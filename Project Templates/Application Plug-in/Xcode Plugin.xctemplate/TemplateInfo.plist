@@ -63,9 +63,9 @@
 		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</key>
 		<dict>
 			<key>Group</key>
-        <array>
-          <string>Supporting Files</string>
-        </array>
+				<array>
+					<string>Supporting Files</string>
+				</array>
 			<key>Path</key>
 			<string>___PACKAGENAME___.xcscheme</string>
 		</dict>
