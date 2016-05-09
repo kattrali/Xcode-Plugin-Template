@@ -18,3 +18,9 @@ The default plugin file links against `AppKit` and `Foundation`, and, when built
 - Add the build UUIDs for the versions of Xcode you wish to support to `DVTPlugInCompatibilityUUIDs` in `Info.plist`. This can be found by running:
 
   <pre>defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</pre>
+
+## Common Issues
+
+* Plugin with Swift root class fails to load: Ensure the `Principle Class` field
+  of `Info.plist` includes the module name.
+  [Reference](https://github.com/kattrali/Xcode-Plugin-Template/pull/35#issuecomment-218011462)
