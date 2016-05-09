@@ -10,15 +10,9 @@
 	<true/>
 	<key>Description</key>
 	<string>This template builds an Xcode plugin. Swift template requires Xcode 6.1+.</string>
-	<key>Platforms</key>
-	<array>
-		<string>com.apple.platform.macosx</string>
-	</array>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.bundleBase</string>
-		<string>com.apple.dt.unit.macBase</string>
-		<string>com.apple.dt.unit.prefixable</string>
+		<string>com.apple.dt.unit.osxbundle</string>
 	</array>
 	<key>Targets</key>
 	<array>
