@@ -12,11 +12,16 @@
 	<string>This template builds an Xcode plugin. Swift template requires Xcode 6.1+.</string>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.osxbundle</string>
+		<string>com.apple.dt.unit.bundleBase</string>
+		<string>com.apple.dt.unit.osxBase</string>
 	</array>
 	<key>Targets</key>
 	<array>
 		<dict>
+			<key>ProductType</key>
+			<string>com.apple.product-type.bundle</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.bundleTarget</string>
 			<key>SharedSettings</key>
 			<dict>
 				<key>INSTALL_PATH</key>
@@ -25,11 +30,22 @@
 				<string>xcplugin</string>
 				<key>DEPLOYMENT_LOCATION</key>
 				<string>YES</string>
-				<key>SKIP_INSTALL</key>
-				<string>NO</string>
 				<key>DSTROOT</key>
 				<string>$(HOME)</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
 			</dict>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Resources</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
 	<key>Nodes</key>
@@ -37,6 +53,7 @@
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
 		<string>Info.plist:xcplugin</string>
 		<string>Info.plist:principalClass</string>
+		<string>Info.plist:NSHumanReadableCopyright</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
@@ -122,23 +139,6 @@
 				<key>Objective-C</key>
 				<array>
 					<dict>
-						<key>Targets</key>
-						<array>
-							<dict>
-								<key>Frameworks</key>
-								<array>
-									<string>AppKit</string>
-									<string>Foundation</string>
-								</array>
-								<key>BuildPhases</key>
-								<array>
-									<dict>
-										<key>Class</key>
-										<string>Frameworks</string>
-									</dict>
-								</array>
-							</dict>
-						</array>
 						<key>Nodes</key>
 						<array>
 							<string>___PACKAGENAME___.h</string>
