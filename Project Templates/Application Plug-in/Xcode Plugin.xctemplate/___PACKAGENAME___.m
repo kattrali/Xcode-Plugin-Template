@@ -14,12 +14,9 @@ static ___PACKAGENAME___ *sharedPlugin;
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
-    static dispatch_once_t onceToken;
-    NSString *currentApplicationName = [[NSBundle mainBundle] infoDictionary][@"CFBundleName"];
-    if ([currentApplicationName isEqual:@"Xcode"]) {
-        dispatch_once(&onceToken, ^{
-            sharedPlugin = [[self alloc] initWithBundle:plugin];
-        });
+    NSArray *allowedLoaders = [plugin objectForInfoDictionaryKey:@"me.delisa.XcodePluginBase.AllowedLoaders"];
+    if ([allowedLoaders containsObject:[[NSBundle mainBundle] bundleIdentifier]]) {
+        sharedPlugin = [[self alloc] initWithBundle:plugin];
     }
 }
 

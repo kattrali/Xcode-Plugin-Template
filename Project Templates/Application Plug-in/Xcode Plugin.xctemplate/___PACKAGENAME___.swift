@@ -15,8 +15,8 @@ class ___PACKAGENAME___: NSObject {
     lazy var center = NSNotificationCenter.defaultCenter()
 
     class func pluginDidLoad(bundle: NSBundle) {
-        let appName = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? NSString
-        if appName == "Xcode" {
+        let allowedLoaders = bundle.objectForInfoDictionaryKey("me.delisa.XcodePluginBase.AllowedLoaders") as! Array<String>
+        if allowedLoaders.contains(NSBundle.mainBundle().bundleIdentifier ?? "") {
             sharedPlugin = ___PACKAGENAME___(bundle: bundle)
         }
     }

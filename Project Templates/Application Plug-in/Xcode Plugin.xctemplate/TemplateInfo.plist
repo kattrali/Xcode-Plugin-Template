@@ -53,6 +53,7 @@
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
 		<string>Info.plist:xcplugin</string>
 		<string>Info.plist:principalClass</string>
+		<string>Info.plist:allowedLoaders</string>
 		<string>Info.plist:NSHumanReadableCopyright</string>
 	</array>
 	<key>Definitions</key>
@@ -159,6 +160,50 @@
 								<key>Path</key>
 								<string>___PACKAGENAME___.m</string>
 							</dict>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>loadInXcodebuild</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Name</key>
+			<string>Load in xcodebuild</string>
+			<key>Description</key>
+			<string>Whether the plugin should be loaded in the xcodebuild command line tool</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>false</string>
+			<key>Units</key>
+			<dict>
+				<key>true</key>
+				<array>
+					<dict>
+						<key>Definitions</key>
+						<dict>
+							<key>Info.plist:allowedLoaders</key>
+							<string><![CDATA[<key>me.delisa.XcodePluginBase.AllowedLoaders</key>
+<array>
+	<string>com.apple.dt.Xcode</string>
+	<string>com.apple.dt.xcodebuild</string>
+</array>]]></string>
+						</dict>
+					</dict>
+				</array>
+				<key>false</key>
+				<array>
+					<dict>
+						<key>Definitions</key>
+						<dict>
+							<key>Info.plist:allowedLoaders</key>
+							<string><![CDATA[<key>me.delisa.XcodePluginBase.AllowedLoaders</key>
+<array>
+	<string>com.apple.dt.Xcode</string>
+</array>]]></string>
 						</dict>
 					</dict>
 				</array>
