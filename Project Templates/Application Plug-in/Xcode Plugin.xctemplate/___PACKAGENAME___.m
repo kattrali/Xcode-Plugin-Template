@@ -10,11 +10,6 @@
 
 static ___PACKAGENAME___ *sharedPlugin;
 
-@interface ___PACKAGENAME___()
-
-@property (nonatomic, strong, readwrite) NSBundle *bundle;
-@end
-
 @implementation ___PACKAGENAME___
 
 + (void)pluginDidLoad:(NSBundle *)plugin
@@ -33,11 +28,11 @@ static ___PACKAGENAME___ *sharedPlugin;
     return sharedPlugin;
 }
 
-- (id)initWithBundle:(NSBundle *)plugin
+- (id)initWithBundle:(NSBundle *)bundle
 {
     if (self = [super init]) {
         // reference to plugin's bundle, for resource access
-        self.bundle = plugin;
+        _bundle = bundle;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didApplicationFinishLaunchingNotification:)
                                                      name:NSApplicationDidFinishLaunchingNotification
