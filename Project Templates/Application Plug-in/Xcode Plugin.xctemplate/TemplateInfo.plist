@@ -10,35 +10,30 @@
 	<true/>
 	<key>Description</key>
 	<string>This template builds an Xcode plugin. Swift template requires Xcode 6.1+.</string>
-	<key>Platforms</key>
-	<array>
-		<string>com.apple.platform.macosx</string>
-	</array>
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.bundleBase</string>
-		<string>com.apple.dt.unit.macBase</string>
-		<string>com.apple.dt.unit.prefixable</string>
+		<string>com.apple.dt.unit.osxBase</string>
 	</array>
 	<key>Targets</key>
 	<array>
 		<dict>
 			<key>ProductType</key>
 			<string>com.apple.product-type.bundle</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.bundleTarget</string>
 			<key>SharedSettings</key>
 			<dict>
 				<key>INSTALL_PATH</key>
 				<string>/Library/Application Support/Developer/Shared/Xcode/Plug-ins</string>
 				<key>WRAPPER_EXTENSION</key>
 				<string>xcplugin</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>___RUNNINGOSXVERSION___</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
 				<key>DEPLOYMENT_LOCATION</key>
 				<string>YES</string>
 				<key>DSTROOT</key>
 				<string>$(HOME)</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
 			</dict>
 			<key>BuildPhases</key>
 			<array>
@@ -56,46 +51,26 @@
 	<key>Nodes</key>
 	<array>
 		<string>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</string>
-		<string>Info.plist:bundle</string>
+		<string>Info.plist:xcplugin</string>
+		<string>Info.plist:principalClass</string>
+		<string>Info.plist:NSHumanReadableCopyright</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
 		<key>../___PACKAGENAME___.xcodeproj/xcshareddata/xcschemes/___PACKAGENAME___.xcscheme</key>
 		<dict>
 			<key>Group</key>
-        <array>
-          <string>Supporting Files</string>
-        </array>
+				<array>
+					<string>Supporting Files</string>
+				</array>
 			<key>Path</key>
 			<string>___PACKAGENAME___.xcscheme</string>
 		</dict>
-		<key>Info.plist:bundle</key>
-		<string>&lt;key&gt;CFBundleDevelopmentRegion&lt;/key&gt;
-&lt;string&gt;English&lt;/string&gt;
-&lt;key&gt;CFBundleExecutable&lt;/key&gt;
-&lt;string&gt;$(EXECUTABLE_NAME)&lt;/string&gt;
-&lt;key&gt;CFBundleName&lt;/key&gt;
-&lt;string&gt;$(PRODUCT_NAME)&lt;/string&gt;
-&lt;key&gt;CFBundleIconFile&lt;/key&gt;
-&lt;string&gt;&lt;/string&gt;
-&lt;key&gt;CFBundleInfoDictionaryVersion&lt;/key&gt;
-&lt;string&gt;6.0&lt;/string&gt;
-&lt;key&gt;CFBundlePackageType&lt;/key&gt;
-&lt;string&gt;BNDL&lt;/string&gt;
-&lt;key&gt;CFBundleSignature&lt;/key&gt;
-&lt;string&gt;????&lt;/string&gt;
-&lt;key&gt;LSMinimumSystemVersion&lt;/key&gt;
-&lt;string&gt;$(MACOSX_DEPLOYMENT_TARGET)&lt;/string&gt;
-&lt;key&gt;CFBundleVersion&lt;/key&gt;
-&lt;string&gt;1&lt;/string&gt;
-&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
-&lt;string&gt;1.0&lt;/string&gt;
-&lt;key&gt;XCPluginHasUI&lt;/key&gt;
+		<key>Info.plist:xcplugin</key>
+		<string>&lt;key&gt;XCPluginHasUI&lt;/key&gt;
 &lt;false/&gt;
 &lt;key&gt;XC4Compatible&lt;/key&gt;
 &lt;true/&gt;
-&lt;key&gt;NSPrincipalClass&lt;/key&gt;
-&lt;string&gt;___PACKAGENAME___&lt;/string&gt;
 &lt;key&gt;DVTPlugInCompatibilityUUIDs&lt;/key&gt;
 &lt;array&gt;
 &lt;string&gt;C4A681B0-4A26-480E-93EC-1218098B9AA0&lt;/string&gt;
@@ -150,6 +125,9 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
+							<key>Info.plist:principalClass</key>
+							<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;___PACKAGENAME___.___PACKAGENAME___&lt;/string&gt;</string>
 							<key>___PACKAGENAME___.swift</key>
 							<dict>
 								<key>Path</key>
@@ -161,23 +139,6 @@
 				<key>Objective-C</key>
 				<array>
 					<dict>
-						<key>Targets</key>
-						<array>
-							<dict>
-								<key>Frameworks</key>
-								<array>
-									<string>AppKit</string>
-									<string>Foundation</string>
-								</array>
-								<key>BuildPhases</key>
-								<array>
-									<dict>
-										<key>Class</key>
-										<string>Frameworks</string>
-									</dict>
-								</array>
-							</dict>
-						</array>
 						<key>Nodes</key>
 						<array>
 							<string>___PACKAGENAME___.h</string>
@@ -185,6 +146,9 @@
 						</array>
 						<key>Definitions</key>
 						<dict>
+							<key>Info.plist:principalClass</key>
+							<string>&lt;key&gt;NSPrincipalClass&lt;/key&gt;
+&lt;string&gt;___PACKAGENAME___&lt;/string&gt;</string>
 							<key>___PACKAGENAME___.h</key>
 							<dict>
 								<key>Path</key>
