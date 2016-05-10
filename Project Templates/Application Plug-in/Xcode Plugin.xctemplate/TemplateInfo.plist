@@ -25,6 +25,8 @@
 				<string>xcplugin</string>
 				<key>DEPLOYMENT_LOCATION</key>
 				<string>YES</string>
+				<key>SKIP_INSTALL</key>
+				<string>NO</string>
 				<key>DSTROOT</key>
 				<string>$(HOME)</string>
 			</dict>
