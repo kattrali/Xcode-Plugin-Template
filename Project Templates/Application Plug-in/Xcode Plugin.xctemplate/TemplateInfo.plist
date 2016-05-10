@@ -17,34 +17,17 @@
 	<key>Targets</key>
 	<array>
 		<dict>
-			<key>ProductType</key>
-			<string>com.apple.product-type.bundle</string>
 			<key>SharedSettings</key>
 			<dict>
 				<key>INSTALL_PATH</key>
 				<string>/Library/Application Support/Developer/Shared/Xcode/Plug-ins</string>
 				<key>WRAPPER_EXTENSION</key>
 				<string>xcplugin</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>___RUNNINGOSXVERSION___</string>
-				<key>COMBINE_HIDPI_IMAGES</key>
-				<string>YES</string>
 				<key>DEPLOYMENT_LOCATION</key>
 				<string>YES</string>
 				<key>DSTROOT</key>
 				<string>$(HOME)</string>
 			</dict>
-			<key>BuildPhases</key>
-			<array>
-				<dict>
-					<key>Class</key>
-					<string>Sources</string>
-				</dict>
-				<dict>
-					<key>Class</key>
-					<string>Resources</string>
-				</dict>
-			</array>
 		</dict>
 	</array>
 	<key>Nodes</key>
