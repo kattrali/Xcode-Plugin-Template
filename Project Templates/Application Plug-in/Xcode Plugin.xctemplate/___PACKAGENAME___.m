@@ -39,7 +39,7 @@ static ___PACKAGENAME___ *sharedPlugin;
                                                          name:NSApplicationDidFinishLaunchingNotification
                                                        object:nil];
         } else {
-            [self initialize];
+            [self initializeAndLog];
         }
     }
     return self;
@@ -48,12 +48,20 @@ static ___PACKAGENAME___ *sharedPlugin;
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
-    [self initialize];
+    [self initializeAndLog];
+}
+
+- (void)initializeAndLog
+{
+    NSString *name = [self.bundle objectForInfoDictionaryKey:@"CFBundleName"];
+    NSString *version = [self.bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *status = [self initialize] ? @"loaded successfully" : @"failed to load";
+    NSLog(@"🔌 Plugin %@ %@ %@", name, version, status);
 }
 
 #pragma mark - Implementation
 
-- (void)initialize
+- (BOOL)initialize
 {
     // Create menu items, initialize UI, etc.
     // Sample Menu Item:
@@ -64,6 +72,9 @@ static ___PACKAGENAME___ *sharedPlugin;
         //[actionMenuItem setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
         [actionMenuItem setTarget:self];
         [[menuItem submenu] addItem:actionMenuItem];
+        return YES;
+    } else {
+        return NO;
     }
 }
 

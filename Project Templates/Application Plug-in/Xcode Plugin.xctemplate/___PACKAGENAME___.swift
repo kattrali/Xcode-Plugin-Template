@@ -31,27 +31,36 @@ class ___PACKAGENAME___: NSObject {
         if (NSApp != nil && NSApp.mainMenu == nil) {
             center.addObserver(self, selector: #selector(self.applicationDidFinishLaunching), name: NSApplicationDidFinishLaunchingNotification, object: nil)
         } else {
-            initialize()
+            initializeAndLog()
         }
+    }
+
+    private func initializeAndLog() {
+        let name = bundle.objectForInfoDictionaryKey("CFBundleName")
+        let version = bundle.objectForInfoDictionaryKey("CFBundleShortVersionString")
+        let status = initialize() ? "loaded successfully" : "failed to load"
+        NSLog("🔌 Plugin \(name) \(version) \(status)")
     }
 
     func applicationDidFinishLaunching() {
         center.removeObserver(self, name: NSApplicationDidFinishLaunchingNotification, object: nil)
-        initialize()
+        initializeAndLog()
     }
 
     // MARK: - Implementation
 
-    func initialize() {
-        guard let mainMenu = NSApp.mainMenu else { return }
-        guard let item = mainMenu.itemWithTitle("Edit") else { return }
-        guard let submenu = item.submenu else { return }
+    func initialize() -> Bool {
+        guard let mainMenu = NSApp.mainMenu else { return false }
+        guard let item = mainMenu.itemWithTitle("Edit") else { return false }
+        guard let submenu = item.submenu else { return false }
 
         let actionMenuItem = NSMenuItem(title:"Do Action", action:#selector(self.doMenuAction), keyEquivalent:"")
         actionMenuItem.target = self
 
         submenu.addItem(NSMenuItem.separatorItem())
         submenu.addItem(actionMenuItem)
+
+        return true
     }
 
     func doMenuAction() {
