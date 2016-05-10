@@ -12,6 +12,8 @@ static ___PACKAGENAME___ *sharedPlugin;
 
 @implementation ___PACKAGENAME___
 
+#pragma mark - Initialization
+
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
     NSArray *allowedLoaders = [plugin objectForInfoDictionaryKey:@"me.delisa.XcodePluginBase.AllowedLoaders"];
@@ -30,19 +32,29 @@ static ___PACKAGENAME___ *sharedPlugin;
     if (self = [super init]) {
         // reference to plugin's bundle, for resource access
         _bundle = bundle;
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(didApplicationFinishLaunchingNotification:)
-                                                     name:NSApplicationDidFinishLaunchingNotification
-                                                   object:nil];
+        // NSApp may be nil if the plugin is loaded from the xcodebuild command line tool
+        if (NSApp && !NSApp.mainMenu) {
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(applicationDidFinishLaunching:)
+                                                         name:NSApplicationDidFinishLaunchingNotification
+                                                       object:nil];
+        } else {
+            [self initialize];
+        }
     }
     return self;
 }
 
-- (void)didApplicationFinishLaunchingNotification:(NSNotification*)noti
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    //removeObserver
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
-    
+    [self initialize];
+}
+
+#pragma mark - Implementation
+
+- (void)initialize
+{
     // Create menu items, initialize UI, etc.
     // Sample Menu Item:
     NSMenuItem *menuItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
@@ -61,11 +73,6 @@ static ___PACKAGENAME___ *sharedPlugin;
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:@"Hello, World"];
     [alert runModal];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

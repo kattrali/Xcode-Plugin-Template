@@ -14,6 +14,8 @@ class ___PACKAGENAME___: NSObject {
     var bundle: NSBundle
     lazy var center = NSNotificationCenter.defaultCenter()
 
+    // MARK: - Initialization
+
     class func pluginDidLoad(bundle: NSBundle) {
         let allowedLoaders = bundle.objectForInfoDictionaryKey("me.delisa.XcodePluginBase.AllowedLoaders") as! Array<String>
         if allowedLoaders.contains(NSBundle.mainBundle().bundleIdentifier ?? "") {
@@ -25,20 +27,22 @@ class ___PACKAGENAME___: NSObject {
         self.bundle = bundle
 
         super.init()
-        center.addObserver(self, selector: #selector(self.createMenuItems), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        // NSApp may be nil if the plugin is loaded from the xcodebuild command line tool
+        if (NSApp != nil && NSApp.mainMenu == nil) {
+            center.addObserver(self, selector: #selector(self.applicationDidFinishLaunching), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        } else {
+            initialize()
+        }
     }
 
-    deinit {
-        removeObserver()
+    func applicationDidFinishLaunching() {
+        center.removeObserver(self, name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        initialize()
     }
 
-    func removeObserver() {
-        center.removeObserver(self)
-    }
+    // MARK: - Implementation
 
-    func createMenuItems() {
-        removeObserver()
-
+    func initialize() {
         guard let mainMenu = NSApp.mainMenu else { return }
         guard let item = mainMenu.itemWithTitle("Edit") else { return }
         guard let submenu = item.submenu else { return }
