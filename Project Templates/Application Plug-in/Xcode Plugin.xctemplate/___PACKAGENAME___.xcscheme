@@ -20,20 +20,6 @@
                ReferencedContainer = "container:___PACKAGENAME___.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8966AFCA173EB7BF004150C0"
-               BuildableName = "___PACKAGENAME___Tests.xctest"
-               BlueprintName = "___PACKAGENAME___Tests"
-               ReferencedContainer = "container:___PACKAGENAME___.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
