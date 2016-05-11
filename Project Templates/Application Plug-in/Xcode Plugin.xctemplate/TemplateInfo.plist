@@ -66,6 +66,8 @@
 				</array>
 			<key>Path</key>
 			<string>___PACKAGENAME___.xcscheme</string>
+			<key>TargetIndices</key>
+			<array/>
 		</dict>
 		<key>Info.plist:xcplugin</key>
 		<string>&lt;key&gt;XCPluginHasUI&lt;/key&gt;
