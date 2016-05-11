@@ -14,9 +14,11 @@ class ___PACKAGENAME___: NSObject {
     var bundle: NSBundle
     lazy var center = NSNotificationCenter.defaultCenter()
 
+    // MARK: - Initialization
+
     class func pluginDidLoad(bundle: NSBundle) {
-        let appName = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? NSString
-        if appName == "Xcode" {
+        let allowedLoaders = bundle.objectForInfoDictionaryKey("me.delisa.XcodePluginBase.AllowedLoaders") as! Array<String>
+        if allowedLoaders.contains(NSBundle.mainBundle().bundleIdentifier ?? "") {
             sharedPlugin = ___PACKAGENAME___(bundle: bundle)
         }
     }
@@ -25,29 +27,40 @@ class ___PACKAGENAME___: NSObject {
         self.bundle = bundle
 
         super.init()
-        center.addObserver(self, selector: #selector(self.createMenuItems), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        // NSApp may be nil if the plugin is loaded from the xcodebuild command line tool
+        if (NSApp != nil && NSApp.mainMenu == nil) {
+            center.addObserver(self, selector: #selector(self.applicationDidFinishLaunching), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        } else {
+            initializeAndLog()
+        }
     }
 
-    deinit {
-        removeObserver()
+    private func initializeAndLog() {
+        let name = bundle.objectForInfoDictionaryKey("CFBundleName")
+        let version = bundle.objectForInfoDictionaryKey("CFBundleShortVersionString")
+        let status = initialize() ? "loaded successfully" : "failed to load"
+        NSLog("🔌 Plugin \(name) \(version) \(status)")
     }
 
-    func removeObserver() {
-        center.removeObserver(self)
+    func applicationDidFinishLaunching() {
+        center.removeObserver(self, name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        initializeAndLog()
     }
 
-    func createMenuItems() {
-        removeObserver()
+    // MARK: - Implementation
 
-        guard let mainMenu = NSApp.mainMenu else { return }
-        guard let item = mainMenu.itemWithTitle("Edit") else { return }
-        guard let submenu = item.submenu else { return }
+    func initialize() -> Bool {
+        guard let mainMenu = NSApp.mainMenu else { return false }
+        guard let item = mainMenu.itemWithTitle("Edit") else { return false }
+        guard let submenu = item.submenu else { return false }
 
         let actionMenuItem = NSMenuItem(title:"Do Action", action:#selector(self.doMenuAction), keyEquivalent:"")
         actionMenuItem.target = self
 
         submenu.addItem(NSMenuItem.separatorItem())
         submenu.addItem(actionMenuItem)
+
+        return true
     }
 
     func doMenuAction() {
